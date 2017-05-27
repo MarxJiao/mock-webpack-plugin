@@ -10,5 +10,6 @@
     "babel-plugin-transform-async-to-module-method": "^6.24.1",
     "babel-register": "^6.24.1",
     "express": "^4.15.3"
-  }
+  },
+  "repository": "https://github.com/MarxJiao/mock-webpack-plugin.git"
 }
