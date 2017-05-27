@@ -1,0 +1,14 @@
+{
+  "name": "mock-webpack-plugin",
+  "version": "1.0.0",
+  "description": "mock server plugin for webpack",
+  "main": "src/index.js",
+  "author": "Marx",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-async-to-module-method": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "express": "^4.15.3"
+  }
+}
