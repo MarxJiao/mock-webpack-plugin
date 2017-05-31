@@ -43,7 +43,7 @@ module.exports = config;
 }
 ```
 
-在webpack.config.js中，配置proxy和mock-webpck-plugn
+在webpack.config.js中，配置proxy和mock-webpck-plugin
 ```javascript
 const path = require('path');
 
