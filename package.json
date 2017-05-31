@@ -1,15 +1,24 @@
 {
   "name": "mock-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mock server plugin for webpack",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "author": "Marx",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.15.3"
+  },
+  "repository": "https://github.com/MarxJiao/mock-webpack-plugin.git",
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-async-to-module-method": "^6.24.1",
     "babel-register": "^6.24.1",
-    "express": "^4.15.3"
-  },
-  "repository": "https://github.com/MarxJiao/mock-webpack-plugin.git"
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  }
 }

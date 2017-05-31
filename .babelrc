@@ -1,6 +1,3 @@
 {
-    "plugins": [
-        "transform-async-to-generator",
-        "transform-async-to-module-method"
-    ]
+  "presets": ["es2017"]
 }

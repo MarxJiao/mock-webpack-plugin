@@ -7,16 +7,15 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = async function(req, res, next) {
-    const urljson = readConfig(process.argv[2])
-    if(urljson[req.path]) {
-        const data = await fsRead(urljson[req.path].path)
+    const config = readConfig(req.config);
+    if (config[req.path]) {
+        const data = await fsRead(config[req.path].path)
         res.send(JSON.parse(data));
     }else {
-        res.send({errno: -1, msg: 'No such config file'});
+        res.send({errno: -1, msg: 'No such proxy: ' + req.path});
     }
     next();
 }
-
 
 /**
  * Get config content
@@ -35,7 +34,7 @@ function readConfig(configPath) {
  * @param {string} filePath file path
  * @return {Object} Promise
  */
-function fsRead(fifilePathle) {
+function fsRead(filePath) {
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, (err, data) => {
             if (err) {
