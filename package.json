@@ -1,6 +1,6 @@
 {
   "name": "mock-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "mock server plugin for webpack",
   "main": "dist/index.js",
   "author": "Marx",
