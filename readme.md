@@ -4,7 +4,7 @@
 A webpack plugin that starts a json mock server
 
 # What is the problem this plugin solved
-For the front and back of the development of the project, most of the situation is the first agreed interface format, front-end use of local mock data to develop. Webpack-dev-server provides proxy configuration, we can be in the development of the interface agent to the local service. Mock data using the json file can be the most convenient development, but in the webpack-dev-server 1.6aafter the version does not support the interface proxy to json file. The webpack-dev-server proxy uses http-proxy-middleware, which [issue] (https://github.com/chimurai/http-proxy-middleware/issues/63) explains why.
+For the front and back of the development of the project, most of the situation is the first agreed interface format, front-end use of local mock data to develop. Webpack-dev-server provides proxy configuration, we can be in the development of the interface agent to the local service. Mock data using the json file can be the most convenient development, but in the webpack-dev-server 1.6 after the version does not support the interface proxy to json file. The webpack-dev-server proxy uses http-proxy-middleware, which [issue] (https://github.com/chimurai/http-proxy-middleware/issues/63) explains why.
 
 So in the development process we need to build the server, to point to the interface JSON file. The function of the plug-in is to serve a courier service to these interfaces, and according to the configuration point to the corresponding JSON file.
 
