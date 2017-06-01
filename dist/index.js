@@ -11,12 +11,12 @@ const server = require('./server.js');
  * @param {Object} param data that plugin needs
  */
 function MockWebpackPlugin({ config, port = 3000 }) {
-    this.configPath = config;
+    this.config = config;
     this.port = port;
 }
 
 MockWebpackPlugin.prototype.apply = function (compiler) {
-    server({ config: this.configPath, port: this.port });
+    server({ config: this.config, port: this.port });
     compiler.plugin("emit", (compilation, callback) => {
         callback();
     });
