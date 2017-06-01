@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     new MockWebpackPlugin({
-        config: path.resolve(__dirname, './mock/config.js'),
+        config: proxy,
         port: 3000
     })
   ],

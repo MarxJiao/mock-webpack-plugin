@@ -48,7 +48,7 @@ module.exports = config;
 const path = require('path');
 
 const MockWebpackPlugin = require('mock-webpack-plugin');
-const proxy = require('./mock/mock-config.js');
+const mockConfig = require('./mock/config.js');
 
 module.exports = {
   entry: './index.js',
@@ -59,10 +59,10 @@ module.exports = {
 
   // 配置插件
   plugins: [
-    // 插件的功能是根据配置文件，起一个指定端口的server，路径对应的json文件在配置里添加
+    // 插件的功能是根据配置文件，起一个指定端口的server，将接口请求指向json文件
     new MockWebpackPlugin({
-        // 配置文件的绝对路径
-        config: path.resolve(__dirname, './mock/config.js'),
+        // mock数据的配置内容
+        config: mockConfig,
         // 配置文件的端口
         port: 3000
     })
@@ -81,5 +81,5 @@ module.exports = {
 ```javascript
 new MockWebpackPlugin(options)
 ```
-- options.config 指向配置文件的绝对路径，这个参数必传
+- options.config mock数据的配置信息
 - options.port 代理服务器端口，默认为3000

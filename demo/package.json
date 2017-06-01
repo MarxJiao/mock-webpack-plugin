@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mock-webpack-plugin": "^1.0.0",
+    "mock-webpack-plugin": "^2.0.0",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   }
