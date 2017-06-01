@@ -10,7 +10,7 @@ const fs = require('fs');
 
 module.exports = (() => {
     var _ref = _asyncToGenerator(function* (req, res, next) {
-        const config = readConfig(req.config);
+        const config = req.config;
         if (config[req.path]) {
             const data = yield fsRead(config[req.path].path);
             res.send(JSON.parse(data));

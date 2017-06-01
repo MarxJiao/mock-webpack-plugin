@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = async function(req, res, next) {
-    const config = readConfig(req.config);
+    const config = req.config;
     if (config[req.path]) {
         const data = await fsRead(config[req.path].path)
         res.send(JSON.parse(data));

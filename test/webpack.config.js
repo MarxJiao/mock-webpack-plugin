@@ -1,6 +1,8 @@
 const path = require('path');
 
-const MockWebpackPlugin = require('../src/index.js');
+const MockWebpackPlugin = require('../dist/index.js');
+
+const mockConfig = require('./mock/config.js');
 
 module.exports = {
   entry: './index.js',
@@ -10,7 +12,7 @@ module.exports = {
   },
   plugins: [
     new MockWebpackPlugin({
-        config: path.resolve(__dirname, './mock/config.js'),
+        config: mockConfig,
         port: 5000
     })
   ]
