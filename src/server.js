@@ -3,29 +3,20 @@
  * @author Marx
  */
 
-var express = require('express');
-var returnData = require('./returnData.js');
+const express = require('express');
+const createRouter = require('./router');
 
-module.exports = function({config, port = 3000}) {
+module.exports = function ({config, port = 3000}) {
     if (config) {
-        const mockPort = port || 3000;
-        var app = express();
-        app.use((req, res, next) => {
-            req.config = config;
-            next();           
-        })
-        app.use(returnData);
+        const app = express();
+        app.use(createRouter(config));
 
-        var server = app.listen(mockPort, function () {
-            var host = server.address().address;
-            var port = server.address().port;
-            console.log('Mock server listening at http://%s:%s', host, port);
+        const server = app.listen(port, function () {
+            const port = server.address().port;
+            console.log('Mock server listening at http://localhost:%s', port);
         });
     }
     else {
-        console.log('No Config File!')
+        console.warn('No Config File!');
     }
-}
-
-
-
+};

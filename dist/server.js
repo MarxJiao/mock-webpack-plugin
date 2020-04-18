@@ -1,27 +1,26 @@
+"use strict";
+
 /**
  * @file An express mock server
  * @author Marx
  */
-
 var express = require('express');
-var returnData = require('./returnData.js');
 
-module.exports = function ({ config, port = 3000 }) {
-    if (config) {
-        const mockPort = port || 3000;
-        var app = express();
-        app.use((req, res, next) => {
-            req.config = config;
-            next();
-        });
-        app.use(returnData);
+var createRouter = require('./router');
 
-        var server = app.listen(mockPort, function () {
-            var host = server.address().address;
-            var port = server.address().port;
-            console.log('Mock server listening at http://%s:%s', host, port);
-        });
-    } else {
-        console.log('No Config File!');
-    }
+module.exports = function (_ref) {
+  var config = _ref.config,
+      _ref$port = _ref.port,
+      port = _ref$port === void 0 ? 3000 : _ref$port;
+
+  if (config) {
+    var app = express();
+    app.use(createRouter(config));
+    var server = app.listen(port, function () {
+      var port = server.address().port;
+      console.log('Mock server listening at http://localhost:%s', port);
+    });
+  } else {
+    console.warn('No Config File!');
+  }
 };
