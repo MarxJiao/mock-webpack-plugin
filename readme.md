@@ -1,5 +1,7 @@
 # MockWebpackPlugin
 
+![Node.js CI](https://github.com/MarxJiao/mock-webpack-plugin/workflows/Node.js%20CI/badge.svg?event=push)
+
 [中文readme](./readme-zh.md)
 
 A webpack plugin that starts a json mock server
