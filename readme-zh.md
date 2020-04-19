@@ -1,5 +1,7 @@
 # MockWebpackPlugin
 
+![Node.js CI](https://github.com/MarxJiao/mock-webpack-plugin/workflows/Node.js%20CI/badge.svg?event=push)
+
 一个建立mock server的webpack插件
 
 # 这个插件解决的问题
