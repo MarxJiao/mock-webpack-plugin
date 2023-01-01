@@ -21,7 +21,7 @@
     "@babel/preset-env": "^7.9.5",
     "axios": "^0.21.1",
     "jest": "^25.3.0",
-    "webpack": "^4.42.1"
+    "webpack": "^5.75.0"
   },
   "jest": {
     "testEnvironment": "node"
